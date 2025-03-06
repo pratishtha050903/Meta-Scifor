@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}New Post - My Blog{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow p-4">
+        <h2 class="text-center text-primary">{% if form.instance.pk %}Edit Post{% else %}New Post{% endif %}</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                {{ form.title }}
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Content</label>
+                {{ form.content }}
+            </div>
+            <div class="mb-3">
+                <label class="form-label">By</label>
+                {{ form.author_name }}
+            </div>
+            <button type="submit" class="btn btn-success w-100">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

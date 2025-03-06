@@ -1,0 +1,38 @@
+[
+    {
+        "model": "library_app.book",
+        "pk": 1,
+        "fields": {
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "isbn": "9780743273565",
+            "publication_year": 1925,
+            "genre": "Fiction",
+            "available": true
+        }
+    },
+    {
+        "model": "library_app.book",
+        "pk": 2,
+        "fields": {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "isbn": "9780061120084",
+            "publication_year": 1960,
+            "genre": "Classic",
+            "available": true
+        }
+    },
+    {
+        "model": "library_app.book",
+        "pk": 3,
+        "fields": {
+            "title": "1984",
+            "author": "George Orwell",
+            "isbn": "9780451524935",
+            "publication_year": 1949,
+            "genre": "Dystopian",
+            "available": true
+        }
+    }
+]
