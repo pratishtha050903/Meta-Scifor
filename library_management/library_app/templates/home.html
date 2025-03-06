@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5 text-center">
+        <h1>📚 Welcome to the Library</h1>
+
+        {% if user.is_authenticated %}
+            <p>Hello, <strong>{{ user.username }}</strong>!</p>
+            <p><a href="{% url 'book_list' %}" class="btn btn-info">📖 View Books</a></p>
+
+            {% if user.is_staff %}
+                <p><a href="{% url 'add_book' %}" class="btn btn-success">➕ Add Book</a></p>
+            {% endif %}
+
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">🚪 Logout</button>
+</form>
+        {% else %}
+            <p><a href="{% url 'login' %}" class="btn btn-primary">🔑 Login</a></p>
+            <p>New user? <a href="{% url 'register' %}" class="btn btn-warning">✍ Register</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
